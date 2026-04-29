@@ -1,0 +1,28 @@
+test:
+  path:  './data/mnist/test'
+  path_save: './result'
+  num_workers: 0
+
+train:
+  path: './data/mnist/train'
+  num_workers: 0
+  batch_size: 32
+  lr: 1e-5
+  path_save: './saved/'
+  epochs: 1
+
+model: #конфиг не самый гибкий и очевидный Тк проект учебный. Выбор модели происходит при написании сценария непосредственно в коде
+  fc:
+    model_name: 'fc'
+    dim_in: 784
+    dim_out: 10
+  cnn:
+    model_name: 'cnn'
+    dim_in: 28
+    dim_out: 10
+  vit:
+    model_name: 'vit'
+    dim_in: 28
+    dim_out: 10
+    patch: 4
+    d_model: 512
